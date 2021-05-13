@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MailForm</title>
+</head>
+<body>
+
+<h2>メールの送信</h2>
+
+<form th:action="@{/send}" th:object="${mailForm}"
+	th:method="post">
+	
+	送信先　: 
+	<input type="text" th:field="*{toName}"/><br/>
+	タイトル　: 
+	<input type="text" th:field="*{title}"/><br/>
+	本文　: 
+	<input type="text" th:field="*{text}"/><br/>
+	お名前　: 
+	<input type="text" th:field="*{name}"/><br/>
+	
+	
+	<button type="submit">送信</button>
+	
+</form>
+</body>
+</html>
